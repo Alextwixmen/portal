@@ -3,6 +3,7 @@ import styles from './app.module.css';
 import Modal from './Modal';
 import Mouse from './Mouse';
 import Card from './Card';
+import Square from './Square';
 export const App = () => {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('Aboba');
@@ -14,6 +15,7 @@ export const App = () => {
       <button onClick={() => setOpen(true)}>Открыть/Закрыть</button>
       <input value={text} onChange={(e) => setText(e.target.value)}></input>
       <Modal open={open} onClose={() => setOpen(false)} text={text}></Modal>
+      <Square />
     </>
   );
 };
