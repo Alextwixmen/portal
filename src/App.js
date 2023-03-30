@@ -6,6 +6,7 @@ import Card from './Card';
 import Square from './Square';
 import TestEffect from './testEffect';
 import ReducerCounter from './ReducerCounter';
+import MyCuteUseRef from './MyCuteUseRef';
 export const App = () => {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('Portal');
@@ -33,6 +34,7 @@ export const App = () => {
         Посчитай факториал для 6
       </button>
       <ReducerCounter />
+      <MyCuteUseRef />
     </>
   );
 };
