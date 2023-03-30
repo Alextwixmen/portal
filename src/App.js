@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import styles from './app.module.css';
 import Modal from './Modal';
 import Mouse from './Mouse';
@@ -7,16 +7,22 @@ import Square from './Square';
 import TestEffect from './testEffect';
 import ReducerCounter from './ReducerCounter';
 import MyCuteUseRef from './MyCuteUseRef';
+import ModalImrepativeHandle from './ModalImrepativeHandle';
 export const App = () => {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('Portal');
   const [factorialNumber, changeFactorialNumber] = useState(5);
+  const modalRef = useRef();
   function withoutUseCallback() {
     console.log('zopa');
   }
   const withUseCallBack = useCallback(() => {
     return withoutUseCallback();
   }, []);
+  const handleOpenModal = () => {
+    modalRef.current.openModal();
+  };
+  console.log('appRender');
   return (
     <>
       <Card />
@@ -35,6 +41,10 @@ export const App = () => {
       </button>
       <ReducerCounter />
       <MyCuteUseRef />
+      <button onClick={handleOpenModal} style={{ marginTop: '50px' }}>
+        Open
+      </button>
+      <ModalImrepativeHandle ref={modalRef} />
     </>
   );
 };
