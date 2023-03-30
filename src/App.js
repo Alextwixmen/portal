@@ -42,7 +42,7 @@ export const App = () => {
       <ReducerCounter />
       <MyCuteUseRef />
       <button onClick={handleOpenModal} style={{ marginTop: '50px' }}>
-        Open
+        Open/Close
       </button>
       <ModalImrepativeHandle ref={modalRef} />
     </>

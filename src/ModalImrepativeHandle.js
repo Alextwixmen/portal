@@ -1,10 +1,13 @@
 import React from 'react';
 import { forwardRef, useImperativeHandle, useState } from 'react';
 const stylesForModal = {
-  width: '300px',
-  height: '300px',
-  border: '1px solid black',
-  marginTop: '20px',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100vh',
+  overflow: 'hidden',
+  opacity: '0.9',
 };
 const ModalImrepativeHandle = (props, ref) => {
   const [modalState, setModalState] = useState(false);
@@ -15,6 +18,9 @@ const ModalImrepativeHandle = (props, ref) => {
       console.log('m');
     },
   }));
+  const handleClose = () => {
+    setModalState(!modalState);
+  };
   if (!modalState) return null;
   return (
     <div
@@ -31,6 +37,7 @@ const ModalImrepativeHandle = (props, ref) => {
       <span style={{ color: 'white' }}>
         при этом не рендерим родительский компоненте APP
       </span>
+      <button onClick={handleClose}>CLOSE</button>
     </div>
   );
 };
