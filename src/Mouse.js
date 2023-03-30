@@ -6,12 +6,13 @@ const Mouse = (props) => {
   const ref = useRef();
   const mouseMoveHandler = useCallback((e) => {
     const rect = ref.current.getBoundingClientRect();
-    setX(e.clientX - rect.left);
-    setY(e.clientY - rect.top);
+    setX((e.clientX - rect.left).toFixed(0));
+    setY((e.clientY - rect.top).toFixed(0));
   });
   return (
     <div ref={ref} onMouseMove={mouseMoveHandler}>
       {/* {x}:{y} */}
+
       {props.render({ x, y })}
     </div>
   );

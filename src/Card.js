@@ -11,6 +11,7 @@ export default (props) => {
     <Mouse
       render={({ x, y }) => (
         <div style={cardStyle}>
+          <p>RENDER PROPS</p>
           {x} : {y}
         </div>
       )}
