@@ -10,6 +10,7 @@ function test() {
   return 'red';
 }
 const TestEffect = (props) => {
+  console.log('вызывали тест еффект');
   const [color, changeColor] = useState(test());
   function changePls() {
     let myColor = color === 'red' ? 'blue' : 'red';
@@ -32,4 +33,4 @@ const TestEffect = (props) => {
   );
 };
 
-export default TestEffect;
+export default React.memo(TestEffect);
