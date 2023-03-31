@@ -8,6 +8,7 @@ import TestEffect from './testEffect';
 import ReducerCounter from './ReducerCounter';
 import MyCuteUseRef from './MyCuteUseRef';
 import ModalImrepativeHandle from './ModalImrepativeHandle';
+import CommentsApp from './CommentsApp';
 export const App = () => {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('Portal');
@@ -45,6 +46,7 @@ export const App = () => {
         Open/Close
       </button>
       <ModalImrepativeHandle ref={modalRef} />
+      <CommentsApp />
     </>
   );
 };
